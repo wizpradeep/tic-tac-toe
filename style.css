@@ -24,6 +24,7 @@
 }
 
 th {
+  cursor: pointer;
   font-size: 80px;
   border: 2px solid black;
   height: 100px;

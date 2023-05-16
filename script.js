@@ -1,9 +1,20 @@
 console.log("Hello, World!");
 
 const thClick = document.getElementById("thClick");
-const ahh = document.getElementById("ahh");
 const looser = document.getElementById("looser");
 const again = document.getElementById("again");
+
+//
+const a = document.getElementById("a");
+const b = document.getElementById("b");
+const c = document.getElementById("c");
+const d = document.getElementById("d");
+const e = document.getElementById("e");
+const f = document.getElementById("f");
+const g = document.getElementById("g");
+const h = document.getElementById("h");
+const i = document.getElementById("i");
+//
 
 const th = Array.from(document.querySelectorAll("th"));
 
@@ -16,15 +27,19 @@ again.addEventListener("click", function () {
     element.style.pointerEvents = "auto";
     looser.pause();
     looser.currentTime = 0;
+    element.style.backgroundColor = "white";
   });
 });
 
 //
 function checkGame(aa, bb, cc) {
   if (
-    (aa == "x" && bb == "x" && cc == "x") ||
-    (aa == "0" && bb == "0" && cc == "0")
+    (aa.innerHTML == "x" && bb.innerHTML == "x" && cc.innerHTML == "x") ||
+    (aa.innerHTML == "0" && bb.innerHTML == "0" && cc.innerHTML == "0")
   ) {
+    aa.style.backgroundColor = "red";
+    bb.style.backgroundColor = "red";
+    cc.style.backgroundColor = "red";
     console.log("gameOver");
     looser.play();
     // alert("this is for looser");
@@ -39,9 +54,8 @@ function checkGame(aa, bb, cc) {
 
 th.forEach((element) => {
   element.addEventListener("click", function () {
-    ahh.play();
     if (element.innerHTML == "") {
-      //   thClick.play();
+      thClick.play();
       if (turn == "x") {
         turn = "0";
         element.innerHTML = turn;
@@ -53,15 +67,15 @@ th.forEach((element) => {
       element.style.pointerEvents = "none";
     }
 
-    const a = document.getElementById("a").innerHTML;
-    const b = document.getElementById("b").innerHTML;
-    const c = document.getElementById("c").innerHTML;
-    const d = document.getElementById("d").innerHTML;
-    const e = document.getElementById("e").innerHTML;
-    const f = document.getElementById("f").innerHTML;
-    const g = document.getElementById("g").innerHTML;
-    const h = document.getElementById("h").innerHTML;
-    const i = document.getElementById("i").innerHTML;
+    // const a = document.getElementById("a").innerHTML;
+    // const b = document.getElementById("b").innerHTML;
+    // const c = document.getElementById("c").innerHTML;
+    // const d = document.getElementById("d").innerHTML;
+    // const e = document.getElementById("e").innerHTML;
+    // const f = document.getElementById("f").innerHTML;
+    // const g = document.getElementById("g").innerHTML;
+    // const h = document.getElementById("h").innerHTML;
+    // const i = document.getElementById("i").innerHTML;
 
     //
     checkGame(a, b, c);
